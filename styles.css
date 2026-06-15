@@ -1604,8 +1604,8 @@ h3 {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.1);
-  background: rgba(16, 18, 26, 0.92);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1617,9 +1617,9 @@ h3 {
 .tl-step--1 .tl-node,
 .tl-step--2 .tl-node,
 .tl-step--3 .tl-node {
-  border-color: rgba(46, 125, 246, 0.3);
-  background: rgba(16, 18, 26, 0.92);
-  box-shadow: 0 0 16px rgba(46, 125, 246, 0.1);
+  border-color: rgba(255, 255, 255, 0.92);
+  background: #fff;
+  box-shadow: 0 0 16px rgba(46, 125, 246, 0.12);
 }
 
 .tl-step:hover .tl-node {
