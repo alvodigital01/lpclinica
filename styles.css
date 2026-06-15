@@ -1086,7 +1086,7 @@ h3 {
 
   .hero {
     aspect-ratio: 750 / 900;
-    min-height: auto;
+    min-height: calc(100svh - 68px);
     padding: 0;
   }
 
@@ -1252,6 +1252,7 @@ h3 {
 
   .hero {
     margin-top: 62px;
+    min-height: calc(100svh - 62px);
   }
 }
 
