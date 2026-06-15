@@ -385,51 +385,7 @@ h2 {
 }
 
 .solution h2 {
-  font-size: clamp(1.55rem, 4.4vw, 3.05rem);
-  white-space: nowrap;
-}
-
-.solution h2 span {
-  display: inline-block;
-}
-
-.title-site {
-  color: #a78bfa;
-}
-
-.title-instagram {
-  color: #ff7a1a;
-}
-
-.title-google span:nth-child(1),
-.title-google span:nth-child(4) {
-  color: #4285f4;
-}
-
-.title-google,
-.title-google span {
-  text-decoration: none;
-}
-
-.title-google span:nth-child(2),
-.title-google span:nth-child(6) {
-  color: #ea4335;
-}
-
-.title-google span:nth-child(3) {
-  color: #fbbc04;
-}
-
-.title-google span:nth-child(5) {
-  color: #34a853;
-}
-
-.title-maps {
-  color: var(--text);
-}
-
-.title-whatsapp {
-  color: var(--success);
+  font-size: clamp(1.75rem, 5vw, 3.2rem);
 }
 
 h3 {
@@ -1671,6 +1627,19 @@ h3 {
   box-shadow: 0 0 28px rgba(46, 125, 246, 0.24);
 }
 
+.tl-node-group {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  height: 72px;
+  align-items: center;
+}
+
+.tl-node-group .tl-node {
+  width: 52px;
+  height: 52px;
+}
+
 .tl-ico {
   width: 20px;
   height: 20px;
@@ -1753,6 +1722,17 @@ h3 {
     padding-bottom: 20px;
   }
 
+  .tl-node-group {
+    flex-direction: column;
+    height: auto;
+    gap: 6px;
+  }
+
+  .tl-node-group .tl-node {
+    width: 40px;
+    height: 40px;
+  }
+
   .tl-step:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -1797,6 +1777,11 @@ h3 {
   .tl-card h3 {
     font-size: 1rem;
     line-height: 1.15;
+  }
+
+  .tl-step--1:not(:last-child)::after {
+    left: 19px;
+    top: 86px;
   }
 }
 
