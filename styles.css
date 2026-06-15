@@ -28,6 +28,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--text);
   background:
     radial-gradient(circle at 50% -20%, rgba(46, 125, 246, 0.18), transparent 34rem),
@@ -1086,7 +1087,7 @@ h3 {
 
   .hero {
     aspect-ratio: 750 / 900;
-    min-height: calc(100svh - 68px);
+    min-height: 0;
     padding: 0;
   }
 
@@ -1116,7 +1117,7 @@ h3 {
   }
 
   .hero-media img {
-    object-fit: contain;
+    object-fit: cover;
     object-position: top center;
     background: var(--bg);
   }
@@ -1252,7 +1253,6 @@ h3 {
 
   .hero {
     margin-top: 62px;
-    min-height: calc(100svh - 62px);
   }
 }
 
