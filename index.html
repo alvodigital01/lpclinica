@@ -27,7 +27,12 @@
           <span class="brand-name">Nicolas</span>
           <span class="brand-dev">DEV</span>
         </a>
-        <div class="nav-links" aria-label="Seções da página">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="nav-links" aria-label="Seções da página">
           <a href="#dor">Dor</a>
           <a href="#sistema">Sistema</a>
           <a href="#passos">Passos</a>
@@ -51,12 +56,12 @@
         <!--
           PONTO DE TROCA: banners do hero.
           Desktop: bg01.jpg
-          Mobile: banner-mobile.jpg
+          Mobile: bgmobi.jpg
           O gradiente escuro por baixo mantém o texto legível mesmo se a imagem não carregar.
         -->
         <picture class="hero-media" aria-hidden="true">
           <source srcset="bg01.jpg" media="(min-width: 760px)" />
-          <img src="banner-mobile.jpg" alt="" />
+          <img src="bgmobi.jpg" alt="" />
         </picture>
         <div class="hero-inner shell">
           <div class="hero-copy reveal">
@@ -76,8 +81,7 @@
                 target="_blank"
                 rel="noopener"
               >
-                <span class="desktop-copy">Quero meu diagnóstico gratuito</span>
-                <span class="mobile-copy">Diagnóstico gratuito</span>
+                <span>Quero meu diagnóstico gratuito</span>
               </a>
               <span class="microcopy">Sem compromisso. Direto no WhatsApp.</span>
             </div>

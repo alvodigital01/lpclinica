@@ -1,6 +1,33 @@
 const faqTriggers = Array.from(document.querySelectorAll(".faq-trigger"));
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const siteHeader = document.querySelector(".site-header");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+function setMenuState(open) {
+  if (!menuToggle || !navLinks) return;
+
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+  navLinks.classList.toggle("is-open", open);
+}
+
+menuToggle?.addEventListener("click", () => {
+  const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+  setMenuState(!isOpen);
+});
+
+navLinks?.addEventListener("click", (event) => {
+  if (event.target.closest("a")) {
+    setMenuState(false);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setMenuState(false);
+  }
+});
 
 function setFaqState(trigger, open) {
   const panel = document.getElementById(trigger.getAttribute("aria-controls"));
