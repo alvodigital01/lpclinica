@@ -133,6 +133,32 @@ if (proofNumber && !prefersReducedMotion && "IntersectionObserver" in window) {
   counterObserver.observe(proofNumber);
 }
 
+const finalForm = document.getElementById("final-form");
+
+if (finalForm) {
+  finalForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const nome = (finalForm.querySelector("#f-nome")?.value ?? "").trim();
+    const clinica = (finalForm.querySelector("#f-clinica")?.value ?? "").trim();
+    const cidade = (finalForm.querySelector("#f-cidade")?.value ?? "").trim();
+    const desafio = (finalForm.querySelector("#f-desafio")?.value ?? "").trim();
+
+    let msg = "Olá!";
+    if (nome) msg += ` Sou ${nome}`;
+    if (clinica) msg += ` da clínica ${clinica}`;
+    if (cidade) msg += `, em ${cidade}`;
+    msg += ".";
+    if (desafio) msg += ` Meu maior desafio hoje: ${desafio}.`;
+    msg += " Vim pelo site e quero meu diagnóstico gratuito.";
+
+    window.open(
+      `https://wa.me/5543988724786?text=${encodeURIComponent(msg)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  });
+}
+
 const tiltCards = Array.from(
   document.querySelectorAll(".compare-card, .step-card, .solution-stack article, .final-card")
 );
