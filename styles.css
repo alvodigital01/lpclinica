@@ -1013,13 +1013,16 @@ h3 {
     right: 0;
     left: 0;
     display: grid;
-    gap: 8px;
+    gap: 0;
     margin: 0;
-    padding: 12px;
-    border: 1px solid rgba(159, 209, 255, 0.18);
+    padding: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(159, 209, 255, 0.2);
     border-radius: var(--radius);
-    background: rgba(1, 0, 5, 0.96);
-    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.34);
+    background:
+      linear-gradient(180deg, rgba(46, 125, 246, 0.12), transparent 34%),
+      rgba(1, 0, 5, 0.98);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.42);
     opacity: 0;
     pointer-events: none;
     transform: translateY(-8px);
@@ -1033,11 +1036,33 @@ h3 {
   }
 
   .nav-links a {
-    min-height: 44px;
-    justify-content: flex-start;
+    min-height: 46px;
+    justify-content: center;
     padding-inline: 14px;
-    border-color: rgba(242, 244, 248, 0.08);
-    background: rgba(255, 255, 255, 0.03);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
+    font-size: 0.9rem;
+  }
+
+  .nav-links a + a {
+    border-top: 1px solid rgba(242, 244, 248, 0.08);
+  }
+
+  .nav-links a:hover {
+    background: rgba(46, 125, 246, 0.1);
+    transform: none;
+  }
+
+  .nav-links .nav-menu-cta {
+    min-height: 48px;
+    margin-top: 10px;
+    border-top: 0;
+    border-radius: var(--radius);
+    color: #ffffff;
+    background: linear-gradient(135deg, #2e7df6, #1655c6);
+    box-shadow: 0 12px 26px rgba(46, 125, 246, 0.24);
   }
 
   .desktop-copy {
@@ -1144,6 +1169,10 @@ h3 {
 }
 
 @media (min-width: 760px) {
+  .nav-menu-cta {
+    display: none !important;
+  }
+
   .menu-toggle {
     display: none;
   }
