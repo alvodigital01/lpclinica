@@ -1475,19 +1475,20 @@ h3 {
 
   .hero-scroll-cue {
     right: 50%;
-    bottom: 22px;
+    bottom: 0;
     width: 40px;
     height: 40px;
-    transform: translateX(50%);
+    transform: translateX(50%) translateY(50%);
   }
 
   .hero-scroll-cue:hover {
-    transform: translateX(50%) translateY(-2px);
+    transform: translateX(50%) translateY(calc(50% - 2px));
   }
 
   .hero {
     aspect-ratio: 750 / 900;
     min-height: 0;
+    overflow: visible;
     padding: 0;
   }
 
