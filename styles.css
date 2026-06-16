@@ -450,6 +450,49 @@ h3 {
   justify-items: start;
 }
 
+.hero-scroll-cue {
+  position: absolute;
+  right: clamp(40%, 47vw, 52%);
+  bottom: 74px;
+  z-index: 3;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  background: rgba(6, 12, 24, 0.22);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  animation: hero-cue-float 2.4s ease-in-out infinite;
+}
+
+.hero-scroll-cue::before {
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: inherit;
+  content: "";
+  animation: hero-cue-ring 2.4s ease-in-out infinite;
+}
+
+.hero-scroll-cue span {
+  width: 17px;
+  height: 17px;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 4v12M5 11l5 5 5-5' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 4v12M5 11l5 5 5-5' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.95;
+}
+
+.hero-scroll-cue:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(46, 125, 246, 0.26);
+  transform: translateY(-2px);
+}
+
 .microcopy {
   color: var(--muted);
   font-size: 0.9rem;
@@ -1430,6 +1473,18 @@ h3 {
     justify-items: stretch;
   }
 
+  .hero-scroll-cue {
+    right: 50%;
+    bottom: 22px;
+    width: 40px;
+    height: 40px;
+    transform: translateX(50%);
+  }
+
+  .hero-scroll-cue:hover {
+    transform: translateX(50%) translateY(-2px);
+  }
+
   .hero {
     aspect-ratio: 750 / 900;
     min-height: 0;
@@ -1954,6 +2009,30 @@ body::after {
 
   50% {
     filter: brightness(1.08);
+  }
+}
+
+@keyframes hero-cue-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 8px;
+  }
+}
+
+@keyframes hero-cue-ring {
+  0%,
+  100% {
+    opacity: 0.16;
+    scale: 0.92;
+  }
+
+  50% {
+    opacity: 0.38;
+    scale: 1;
   }
 }
 
